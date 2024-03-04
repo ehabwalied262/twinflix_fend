@@ -1,11 +1,15 @@
-import { create } from 'zustand';
+import create from 'zustand';
 
 type StoreState = {
-  selectedKey: string;
-  setSelectedKey: (key: string) => void;
+    sidebarSelectedKey: string;
+    setSidebarSelectedKey: (key: string) => void;
+    navbarSelectedKey: string;
+    setNavbarSelectedKey: (key: string) => void;
 };
 
 export const useStore = create<StoreState>((set) => ({
-  selectedKey: 'movies',
-  setSelectedKey: (key) => set((state) => ({ selectedKey: key })),
+    sidebarSelectedKey: 'movies',
+    setSidebarSelectedKey: (key) => set({ sidebarSelectedKey: key }),
+    navbarSelectedKey: 'feed',
+    setNavbarSelectedKey: (key) => set({ navbarSelectedKey: key }),
 }));

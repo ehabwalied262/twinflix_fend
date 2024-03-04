@@ -6,8 +6,8 @@ import { MessageFilled, BellFilled, SearchOutlined } from '@ant-design/icons';
 import { useStore } from '../store';
 
 const NavBar: React.FC = () => {
-    const selectedKey = useStore((state: { selectedKey: string }) => state.selectedKey);
-    const setSelectedKey = useStore((state: { setSelectedKey: (key: string) => void }) => state.setSelectedKey);
+    const selectedKey = useStore((state) => state.navbarSelectedKey);
+    const setSelectedKey = useStore((state) => state.setNavbarSelectedKey);
 
   const getBackgroundColor = (key: string) => {
     return selectedKey === key ? '#00406c' : 'transparent';

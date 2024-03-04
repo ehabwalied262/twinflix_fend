@@ -9,7 +9,7 @@ import ShowsContent from '@/components/shows-content';
 import { useStore } from '../../store';
 
 const Archive: React.FC = () => {
-  const selectedKey = useStore((state: { selectedKey: string }) => state.selectedKey);
+  const selectedKey = useStore((state) => state.navbarSelectedKey);
 
   const renderContent = () => {
     switch (selectedKey) {

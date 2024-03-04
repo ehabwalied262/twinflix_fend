@@ -2,16 +2,19 @@
 
 import SideBar from '@/components/Sidebar';
 import React from 'react';
+import { useStore } from '../../store';
 
-const Feed = () => {
-  return (
-    <div className="flex">
-      <SideBar />
-      <div className="pl-64 w-full">
-            Feed
-      </div>
-    </div>
-  );
-}
+const Feed: React.FC = () => {
+    const sidebarSelectedKey = useStore((state) => state.sidebarSelectedKey);
+
+    return (
+        <div className="flex">
+            <SideBar />
+            <div className="pl-64 w-full">
+                {sidebarSelectedKey === 'feed' && <div>Feed Page Content</div>}
+            </div>
+        </div>
+    );
+};
 
 export default Feed;

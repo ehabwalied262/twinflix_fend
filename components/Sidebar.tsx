@@ -1,12 +1,14 @@
 'use client'
+
 import { Menu, Avatar } from 'antd';
-import { AppstoreAddOutlined, ReadOutlined, TeamOutlined, FireOutlined, SettingOutlined, ProductOutlined, } from '@ant-design/icons';
-import { useState } from 'react';
+import { AppstoreAddOutlined, ReadOutlined, TeamOutlined, FireOutlined, SettingOutlined, ProductOutlined } from '@ant-design/icons';
+import { useStore } from '../store';
 import Link from 'next/link';
 
 const SideBar: React.FC = () => {
-    const [selectedKey, setSelectedKey] = useState<string>('feed');
-    
+    const selectedKey = useStore((state) => state.sidebarSelectedKey);
+    const setSelectedKey = useStore((state) => state.setSidebarSelectedKey);
+
     const handleMenuSelect = ({ key }: { key: string }) => {
         setSelectedKey(key);
     };
@@ -26,60 +28,60 @@ const SideBar: React.FC = () => {
                 <div className="overflow-y-auto">
                     {/* Menu Items */}
                     <Menu theme="dark" mode="inline" selectedKeys={[selectedKey]} className="pt-4 bg-transparent border-0 pl-4">
-                    <Link href='/feed'>
-                        <Menu.Item
-                            key="feed"
-                            icon={<ProductOutlined className='pl-4'/>}
-                            style={{ backgroundColor: getBackgroundColor('feed') }}
-                            onClick={handleMenuSelect}
-                        >
-                            Feed
-                        </Menu.Item>
+                        <Link href='/feed'>
+                            <Menu.Item
+                                key="feed"
+                                icon={<ProductOutlined className='pl-4' />}
+                                style={{ backgroundColor: getBackgroundColor('feed') }}
+                                onClick={handleMenuSelect}
+                            >
+                                Feed
+                            </Menu.Item>
                         </Link>
                         <Link href='/archive'>
-                        <Menu.Item
-                            key="archive"
-                            icon={<AppstoreAddOutlined className='pl-4'/>}
-                            style={{ backgroundColor: getBackgroundColor('archive') }}
-                            onClick={handleMenuSelect}
-                        >
-                            Archive
-                        </Menu.Item>
+                            <Menu.Item
+                                key="archive"
+                                icon={<AppstoreAddOutlined className='pl-4' />}
+                                style={{ backgroundColor: getBackgroundColor('archive') }}
+                                onClick={handleMenuSelect}
+                            >
+                                Archive
+                            </Menu.Item>
                         </Link>
-                       <Link href='/library'>
-                       <Menu.Item
-                            key="library"
-                            icon={<ReadOutlined className='pl-4'/>}
-                            style={{ backgroundColor: getBackgroundColor('library') }}
-                            onClick={handleMenuSelect}
-                        >
-                            Library
-                        </Menu.Item>
-                       </Link>
+                        <Link href='/library'>
+                            <Menu.Item
+                                key="library"
+                                icon={<ReadOutlined className='pl-4' />}
+                                style={{ backgroundColor: getBackgroundColor('library') }}
+                                onClick={handleMenuSelect}
+                            >
+                                Library
+                            </Menu.Item>
+                        </Link>
                         <Link href='/matches'>
-                        <Menu.Item
-                            key="matches"
-                            icon={<FireOutlined className='pl-4'/>}
-                            style={{ backgroundColor: getBackgroundColor('matches') }}
-                            onClick={handleMenuSelect}
-                        >
-                            Matches
-                        </Menu.Item>
+                            <Menu.Item
+                                key="matches"
+                                icon={<FireOutlined className='pl-4' />}
+                                style={{ backgroundColor: getBackgroundColor('matches') }}
+                                onClick={handleMenuSelect}
+                            >
+                                Matches
+                            </Menu.Item>
                         </Link>
                         <Link href='/friends'>
-                        <Menu.Item
-                            key="friends"
-                            icon={<TeamOutlined className='pl-4'/>}
-                            style={{ backgroundColor: getBackgroundColor('friends') }}
-                            onClick={handleMenuSelect}
-                        >
-                            Friends
-                        </Menu.Item>
+                            <Menu.Item
+                                key="friends"
+                                icon={<TeamOutlined className='pl-4' />}
+                                style={{ backgroundColor: getBackgroundColor('friends') }}
+                                onClick={handleMenuSelect}
+                            >
+                                Friends
+                            </Menu.Item>
                         </Link>
                     </Menu>
                 </div>
             </div>
-            
+
             {/* Bottom Section */}
             <div className="flex flex-col items-center p-4">
                 <div className="block w-full pl-4 py-2 cursor-pointer text-white hover:text-gray rounded mb-6 ml-0">
@@ -93,10 +95,9 @@ const SideBar: React.FC = () => {
             </div>
 
             {/* Divider */}
-            <div className="absolute right-0 top-16 bottom-0 bg-gray" style={{width: '1px'}}></div>
+            <div className="absolute right-0 top-16 bottom-0 bg-gray" style={{ width: '1px' }}></div>
         </div>
     );
 };
 
 export default SideBar;
-
