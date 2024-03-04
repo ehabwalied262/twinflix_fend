@@ -7,4 +7,13 @@ export interface Movie {
     description: string;
   }
   
+  export interface Show {
+    id: number;
+    title: string;
+    poster: string;
+    year: string;
+    genre: string;
+    description: string;
+  }
+  
   

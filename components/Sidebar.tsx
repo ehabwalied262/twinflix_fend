@@ -24,15 +24,15 @@ const SideBar = () => {
             
         {/* Bottom Section */}
         <div className="flex flex-col items-center p-4">
-        <div className="block w-full text-left pl-4 py-2 cursor-pointer bg-gray-500 hover:bg-white rounded mb-6 transition duration-300 ease-in-out">
-            <SettingOutlined className="align-middle text-white hover:text-gray-800" />
-            <span className="ml-2 align-middle text-white hover:text-gray-800">Settings</span>
-        </div>
-        <div className="flex flex-row items-center justify-center mb-4">
-            <Avatar size={32} style={{ backgroundColor: '#f56a00' }} />
-            <span className="ml-2">Username</span>
-        </div>
-        </div>
+    <div className="block w-full pl-4 py-2 cursor-pointer text-white hover:text-gray rounded mb-6 ml-0">
+        <SettingOutlined className="align-middle" />
+        <span className="ml-2 align-middle">Settings</span>
+    </div>
+    <div className="mb-4 cursor-pointer hover:text-gray w-full block ml-6">
+        <Avatar style={{ backgroundColor: '#f56a00' }} />
+        <span className="ml-2">Username</span>
+    </div>
+</div>
 
 
         {/* Divider */}

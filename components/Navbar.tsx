@@ -1,7 +1,7 @@
 'use client'
 
 import { Menu, Input } from 'antd';
-import { MessageOutlined, DollarCircleOutlined, SearchOutlined } from '@ant-design/icons';
+import { MessageFilled , BellFilled, SearchOutlined } from '@ant-design/icons';
 
 type NavBarProps = {
     setSelectedKey: (key: string) => void; // Assuming setSelectedKey is a function that takes a string
@@ -25,8 +25,8 @@ const NavBar: React.FC<NavBarProps> = ({ setSelectedKey }) => {
         </div>
 
         <div className="flex items-center">
-            <MessageOutlined className="text-gray-600 mr-2" />
-            <DollarCircleOutlined className="text-gray-600 mr-2" />
+            <MessageFilled  className="text-gray mr-6 hover:cursor-pointer hover:opacity-80" style={{fontSize: 20}} />
+            <BellFilled  className="text-gray mr-6 hover:cursor-pointer hover:opacity-80" style={{fontSize: 20}} />
             <Input
                 className="mr-2"
                 placeholder="Search"
