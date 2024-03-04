@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { ENDPOINTS } from './../app/apiEndpoints';
 import MovieSlider from './movie-slider';
 import axios from 'axios';
-import { Movie } from '@/app/interfaces';
+import { Movie } from '@/interfaces';
 import { LoadingOutlined } from '@ant-design/icons';
 import { Spin } from 'antd';
 

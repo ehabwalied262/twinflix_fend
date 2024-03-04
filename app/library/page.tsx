@@ -1,9 +1,18 @@
-import React from 'react'
+'use client'
+
+import NavBar from '@/components/Navbar'
+import SideBar from '@/components/Sidebar'
+import React, { useState } from 'react'
 
 export default function UserLibrary() {
+
   return (
-    <div className='text-primary'>
+    <div className="flex">
+    <SideBar />
+    <div className="pl-64 w-full">
+      {/* Add your main content here */}
       Library
     </div>
+  </div>
   )
 }

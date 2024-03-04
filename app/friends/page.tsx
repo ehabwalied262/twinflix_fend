@@ -1,9 +1,18 @@
-import React from 'react'
+'use client'
 
-export default function Friends() {
+import NavBar from '@/components/Navbar'
+import SideBar from '@/components/Sidebar'
+import React, { useState } from 'react'
+
+export default function UserFriends() {
+
   return (
-    <div className='text-primary'>
-      Friends
+    <div className="flex">
+    <SideBar />
+    <div className="pl-64 w-full">
+      {/* Add your main content here */}
+      <div>Friends</div>
     </div>
+  </div>
   )
 }

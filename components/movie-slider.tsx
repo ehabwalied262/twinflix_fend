@@ -8,7 +8,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import { Card } from 'antd';
 import { PlusOutlined, CheckOutlined } from '@ant-design/icons';
-import { Movie } from '@/app/interfaces';
+import { Movie } from '@/interfaces';
 
 interface MovieSliderProps {
     popularMovies: Movie[];

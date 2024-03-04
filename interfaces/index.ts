@@ -16,4 +16,14 @@ export interface Movie {
     description: string;
   }
   
+  export interface User {
+    email: string,
+    username: string,
+    profile_picture_url : string,
+  }
+
+  export interface Post {
+    id: number,
+    content: string,
   
+  }
