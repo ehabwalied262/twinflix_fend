@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react';
-import NavBar from '@/components/Navbar';
+import ArchiveNavBar from '@/components/ArchiveNavBar';
 import SideBar from '@/components/Sidebar';
 import AnimeContent from '@/components/anime-content';
 import MoviesContent from '@/components/movies-content';
@@ -27,8 +27,8 @@ const Archive: React.FC = () => {
   return (
     <div className="flex">
       <SideBar />
-      <div className="pl-64 w-full">
-        <NavBar />
+      <div className='w-full mr-4'>
+        <ArchiveNavBar />
         {/* Add your main content here */}
         <div className="content">
           {renderContent()}

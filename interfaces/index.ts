@@ -22,8 +22,13 @@ export interface Movie {
     profile_picture_url : string,
   }
 
-  export interface Post {
-    id: number,
-    content: string,
   
-  }
+  type PostType = 'Review' | 'Meme' | 'Recommendation' | 'Suggestion' | 'Other';
+
+  export type Post = {
+    id: number;
+    type: PostType;
+    content: string;
+    image: string;
+    tags: string[]
+};

@@ -1,13 +1,14 @@
 'use client'
 import React, { useState } from "react";
 import { Form, Input, Button } from "antd";
-import { UserOutlined, LockOutlined, MailOutlined } from "@ant-design/icons";
+import { UserOutlined, LockOutlined } from "@ant-design/icons";
 
 import { ENDPOINTS } from '../../apiEndpoints'; // Import the API endpoint URLs
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import axios, { AxiosError, AxiosResponse } from "axios";
 import { Spin } from 'antd';
+import { useStore } from "@/store";
 
 
 const LoginPage = () => {
@@ -28,10 +29,14 @@ const LoginPage = () => {
     try {
       const response: AxiosResponse = await axios.post(ENDPOINTS.LOGIN, values);
       console.log("API Response:", response.data);
+
+      // Call setUser to update the user information in the Zustand store
+      useStore.getState().setUser(response.data.user);
+      
       // Stop loading and redirect after a successful API response
       setTimeout(() => {
         setLoading(false);
-        router.push("/home");
+        router.push("/feed");
       }, 1000); // Redirect after 1 second
     } catch (error) {
       setLoading(false); // Stop loading in case of an error

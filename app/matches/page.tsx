@@ -1,6 +1,6 @@
 'use client'
 
-import NavBar from '@/components/Navbar'
+import NavBar from '@/components/ArchiveNavBar'
 import SideBar from '@/components/Sidebar'
 import React, { useState } from 'react'
 

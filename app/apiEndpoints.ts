@@ -7,5 +7,7 @@ export const ENDPOINTS = {
   LOGOUT: `${API_BASE_URL}/auth/logout`,
   FORGOT_PASSWORD: `${API_BASE_URL}/auth/forgot-password`,
   GET_MOVIES: `${API_BASE_URL}/get-movies`,
-  GET_SHOWS: `${API_BASE_URL}/get-shows`
+  GET_SHOWS: `${API_BASE_URL}/get-shows`,
+  ADD_POSTS: `${API_BASE_URL}/add-post`,
+  GET_USER_POST: `${API_BASE_URL}/get-user-posts`,
 };

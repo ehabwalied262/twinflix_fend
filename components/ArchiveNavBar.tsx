@@ -1,11 +1,11 @@
 'use client'
 
 import React from 'react';
-import { Menu, Input } from 'antd';
+import { Menu, Input, Tooltip } from 'antd';
 import { MessageFilled, BellFilled, SearchOutlined } from '@ant-design/icons';
 import { useStore } from '../store';
 
-const NavBar: React.FC = () => {
+const ArchiveNavBar: React.FC = () => {
     const selectedKey = useStore((state) => state.navbarSelectedKey);
     const setSelectedKey = useStore((state) => state.setNavbarSelectedKey);
 
@@ -54,8 +54,12 @@ const NavBar: React.FC = () => {
       </div>
 
       <div className="flex items-center">
+      <Tooltip title="messages">
         <MessageFilled className="text-gray mr-6 hover:cursor-pointer hover:opacity-80" style={{ fontSize: 20 }} />
-        <BellFilled className="text-gray mr-6 hover:cursor-pointer hover:opacity-80" style={{ fontSize: 20 }} />
+      </Tooltip>
+        <Tooltip title="notifications">
+          <BellFilled className="text-gray mr-6 hover:cursor-pointer hover:opacity-80" style={{ fontSize: 20 }} />
+        </Tooltip>
         <Input
           className="mr-2"
           placeholder="Search"
@@ -66,4 +70,4 @@ const NavBar: React.FC = () => {
   );
 };
 
-export default NavBar;
+export default ArchiveNavBar;
